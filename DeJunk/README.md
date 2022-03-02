@@ -3,7 +3,9 @@
 可以自定义去除花指令的模式
 
 # usage
+```
 IDA -> File -> Script command... -> dejunk2.py或dejunk3.py
+```
 
 # note
 dejunk2.py为python2版本的代码，适用于IDA7.6以下的版本
