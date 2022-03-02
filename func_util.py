@@ -1,8 +1,6 @@
 # !/usr/bin/env python3
 # -*- coding:utf-8 -*- 
 
-def get_func_hit
-
 # 统计函数被外部调用的次数
 def get_func_call_count(func_adr):
 	call_list = []
