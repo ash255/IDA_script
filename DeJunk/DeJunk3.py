@@ -91,13 +91,13 @@ def dejunk(start,length,dir,S,R):
 	R = re.sub(r"(?<=\w)(?=(?:\w\w)+$)", " ", R)
 	R = R.split(" ")	
 	pat = compiled_binpat_vec_t()
-	parse_binpat_str(out, start, S, 16)
+	parse_binpat_str(pat, start, S, 16)
 	if(dir == "0"):#"0"=向上查找,"1"=向下查找
 		end = start - length
 		if(end < 0):
 			end = 0;
 		while(1):
-			start = bin_search(end,start,out,BIN_SEARCH_NOSHOW|BIN_SEARCH_CASE|BIN_SEARCH_BACKWARD)
+			start = bin_search(end,start,pat,BIN_SEARCH_NOSHOW|BIN_SEARCH_CASE|BIN_SEARCH_BACKWARD)
 			if(start == BADADDR):
 				break
 			if(start < end):
@@ -110,7 +110,7 @@ def dejunk(start,length,dir,S,R):
 	else:
 		end = start + length
 		while(1):
-			start = bin_search(start,end,out,BIN_SEARCH_NOSHOW|BIN_SEARCH_CASE|BIN_SEARCH_FORWARD)
+			start = bin_search(start,end,pat,BIN_SEARCH_NOSHOW|BIN_SEARCH_CASE|BIN_SEARCH_FORWARD)
 			if(start == BADADDR):
 				break
 			if(start > end):
