@@ -1,6 +1,8 @@
 # !/usr/bin/env python3
 # -*- coding:utf-8 -*- 
 
+from idaapi import *
+
 # 统计函数被外部调用的次数
 def get_func_call_count(func_adr):
 	call_list = []
