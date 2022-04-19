@@ -37,18 +37,19 @@ def make_func(start, end, pat_str, align):
 	1.  xx xx 2D E9 (STMFD SP!,{Rx-Ry,LR})
 '''
 def make_arm_func(start, end):
-	make_func(start, end, "?? ?? 2D E9", 4)
+	make_func(start, end, "2D E9 ?? ??", 4)
 
 '''
 	Thumb function format:
-	1.  xx BD (push{Rx-Ry,LR})
+	1.  xx B5 (push{Rx-Ry,LR})
 '''
 def make_thumb_func(start, end):
-	make_func(start, end, "?? BD", 2)
+	make_func(start, end, "?? B5", 2)
 
 
 def main():
-	make_arm_func(0x80000000,0x80470640)
+	# make_arm_func(0x80000000,0x80470640)
+	make_arm_func(0x458C440,0x4614614)
 
 if __name__ == '__main__':
 	main()
