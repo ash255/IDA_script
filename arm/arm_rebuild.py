@@ -50,8 +50,8 @@ def make_thumb_func(start, end):
 	find_and_make(start, end, "2D E9 ?? ??", 4)
 
 def main():
-	make_thumb_func(0x0,0x030FFFD8)
-	make_arm_func(0x0,0x030FFFD8)
+	make_thumb_func(0x044FF000,0x046175E4)
+	# make_arm_func(0x044FF000,0x046175E4)
 
 if __name__ == '__main__':
 	main()
